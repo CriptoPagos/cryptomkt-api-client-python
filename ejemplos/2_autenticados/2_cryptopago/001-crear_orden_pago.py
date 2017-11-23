@@ -24,7 +24,7 @@ Debería haber recibido una copia de la GNU Lesser General Public License
 Ejemplo para crear una orden de pago
 @link https://developers.cryptomkt.com/es/#crear-orden-de-pago
 @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-@version 2017-11-22
+@version 2017-11-23
 """
 
 # credenciales
@@ -55,5 +55,6 @@ PaymentOrder.external_id = 'codigo-orden-interno-del-comercio'
 PaymentOrder.callback_url = 'https://example.com/api/cryptomkt/notification'
 PaymentOrder.error_url = 'https://example.com/cryptomkt/error'
 PaymentOrder.success_url = 'https://example.com/cryptomkt/thanks'
+PaymentOrder.refund_email = 'cliente@example.com' # correo cliente por si hay un problema
 Client.createPaymentOrder(PaymentOrder)
 print(PaymentOrder.payment_url)
