@@ -22,7 +22,7 @@ Debería haber recibido una copia de la GNU Lesser General Public License
 """
 Clase que representa una orden de pago
 @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-@version 2017-11-22
+@version 2017-11-24
 """
 class Order :
 
@@ -36,6 +36,7 @@ class Order :
     callback_url = None # Url a la cual se notificarán los cambios de estado de la orden. Max. 256 caracteres.
     error_url = None # Url a la cual se rediccionará en caso de error. Max. 256 caracteres.
     success_url = None # Url a la cual se rediccionará en caso de éxito. Max. 256 caracteres.
+    refund_email = None # correo para hacer devolución en caso de problemas
 
     # atributos que se asignan a través del servicio web de CryptoMKT
     id = None # ID interno de la orden de pago
@@ -50,7 +51,6 @@ class Order :
     payment_url = None # Url de voucher de orden de pago
     obs = None # Observaciones
     remaining = None # tiempo que queda para hacer el pago
-    refund_email = None # correo para hacer devolución en caso de problemas
     token = None # token para url de pago en CryptoMKT
 
     _statuses = {
