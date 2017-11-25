@@ -3,11 +3,11 @@ Cliente para servicios web de CryptoMKT en Python
 
 .. image:: https://badge.fury.io/py/cryptomkt.svg
     :target: https://pypi.python.org/pypi/cryptomkt
-.. .. image:: https://img.shields.io/pypi/status/cryptomkt.svg
+.. image:: https://img.shields.io/pypi/status/cryptomkt.svg
     :target: https://pypi.python.org/pypi/cryptomkt
-.. .. image:: https://img.shields.io/pypi/pyversions/cryptomkt.svg
+.. image:: https://img.shields.io/pypi/pyversions/cryptomkt.svg
     :target: https://pypi.python.org/pypi/cryptomkt
-.. .. image:: https://img.shields.io/pypi/l/cryptomkt.svg
+.. image:: https://img.shields.io/pypi/l/cryptomkt.svg
     :target: https://raw.githubusercontent.com/CriptoPagos/cryptomkt-api-client-python/master/COPYING
 
 Cliente para realizar la integración con los servicios web de CryptoMKT desde Python.
