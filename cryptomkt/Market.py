@@ -31,7 +31,7 @@ class Market :
 
     def __init__ (self, market, Client = None) :
         self._market = market
-        if Client != None :
+        if Client is not None :
             self.client = Client
 
     def getTicker (self) :

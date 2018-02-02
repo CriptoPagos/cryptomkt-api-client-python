@@ -69,7 +69,7 @@ class Order :
         cols = ['to_receive', 'to_receive_currency', 'payment_receiver', 'external_id', 'callback_url', 'error_url', 'success_url', 'refund_email']
         for col in cols :
             value = getattr(self, col, None)
-            if value != None :
+            if value is not None :
                 data[col] = value
         return data
 
