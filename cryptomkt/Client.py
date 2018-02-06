@@ -39,7 +39,7 @@ class Client:
     response = None # Objeto con la respuesta del servicio web de CryptoMKT
 
     def __init__ (self, api_key = None, api_secret = None) :
-        if api_key != None and api_secret != None :
+        if api_key is not None and api_secret is not None :
             self.api_key = api_key
             self.api_secret = api_secret
 
@@ -63,7 +63,7 @@ class Client:
         return body['data']
 
     def getBook (self, market, type, page = 0, limit = None) :
-        if limit == None :
+        if limit is None :
             limit = self.default_limit
         url = self.createUrl('/book', {'market': market, 'type': type, 'page': page, 'limit': limit})
         self.response = self.consume(url)
@@ -73,11 +73,11 @@ class Client:
         return body['data']
 
     def getTrades (self, market, start = None, end = None, page = 0, limit = None) :
-        if start == None :
+        if start is None :
             start = time.strftime('%Y-%m-%d')
-        if end == None :
+        if end is None :
             end = start
-        if limit == None :
+        if limit is None :
             limit = self.default_limit
         url = self.createUrl('/trades', {'market': market, 'start': start, 'end': end, 'page': page, 'limit': limit})
         self.response = self.consume(url)
@@ -87,7 +87,7 @@ class Client:
         return body['data']
 
     def getActiveOrders (self, market, page = 0, limit = None) :
-        if limit == None :
+        if limit is None :
             limit = self.default_limit
         url = self.createUrl('/orders/active', {'market': market, 'page': page, 'limit': limit})
         self.response = self.consume(url)
@@ -97,7 +97,7 @@ class Client:
         return body['data']
 
     def getExecutedOrders (self, market, page = 0, limit = None) :
-        if limit == None :
+        if limit is None :
             limit = self.default_limit
         url = self.createUrl('/orders/executed', {'market': market, 'page': page, 'limit': limit})
         self.response = self.consume(url)
@@ -159,7 +159,7 @@ class Client:
 
     def createUrl (self, recurso, params = None) :
         url = self._url + '/' + self._version + recurso
-        if params == None :
+        if params is None :
             return url
         if sys.version_info[0] == 2 :
             query = urllib.urlencode(params)
@@ -169,7 +169,7 @@ class Client:
 
     def consume (self, url, data = None) :
         # preparar cabeceras
-        if self.api_key != None and self.api_secret != None :
+        if self.api_key is not None and self.api_secret is not None :
             timestamp = int(time.time())
             path = url.replace(self._url, '').split('?')[0]
             msg = str(timestamp) + path
